@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% include styleinclude.html %}
+    <title>{{ page.title }}</title>
+    </head>
+    <body> 
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="./" class="brand-logo">
+                    <svg height="60" id="logoSvg" width="75" viewBox="0 0 120 120" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circle-right" cx="75" cy="60" r="60" fill="#BD241F"/>
+                        <circle class="circle-left" cx="45" cy="60" r="60" fill="black"/>
+                    </svg>
+                </a>
+                <button class="btn-nav-container open-menu" disabled>
+                    <div class="btn-nav"></div>
+                </button>	
+            </div>
+        </nav>
+    </header>
+
+    <div class="float-nav">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="container">
+            <ul class="main-nav">
+                <li><a href="./">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="products.html">Продукты</a></li>
+            </ul>
+        </div>
+    </div>
