@@ -3404,7 +3404,7 @@ ul { list-style: none; }
 
 .btn-nav-container:active, .btn-nav-container:focus { background: none; }
 
-.logoSvgColor { background-color: white; border: 1px solid white; }
+.logoSvgColor { background-color: white; border: 2px solid white; }
 
 .section-main { padding-top: 280px; }
 
