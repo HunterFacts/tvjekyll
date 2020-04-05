@@ -3607,17 +3607,6 @@ a.close:after { transform: rotate(-45deg); }
 
 .section-main-about svg.parlor-hand-wave { -webkit-animation: parlor-button-wave-scale-animation 5s infinite; animation: parlor-button-wave-scale-animation 5s infinite; }
 
-@media only screen and (max-width: 1024px) { .section, .section-main h1, nav, body, .section-main p { width: 100%; }
-  nav { top: 40px; margin-left: 0; position: fixed; left: 0; }
-  nav .brand-logo { left: 20px; -webkit-transform: none; transform: none; }
-  nav .btn-nav-container { right: 20px; top: 3px; transform-origin: none; }
-  .section-main { padding-top: 214px; }
-  .section-main h1 { font-size: 1.8rem; white-space: pre-line; line-height: normal; letter-spacing: normal; padding: 0 0.75rem; }
-  .section-main h1 span { display: inline; }
-  .section-main p { padding: 0 0.75rem; }
-  .section-full-information { margin-top: 0; }
-  .command-photo-about { min-height: auto; padding-top: 212px; } }
-
 @keyframes showblocks { from { opacity: 0.5;
     transform: translate(0, 30px);
     animation-timing-function: ease-out; }
@@ -3652,11 +3641,23 @@ a.close:after { transform: rotate(-45deg); }
 
 .is-animate-last.is-animate-active { animation-name: showblockslast; animation-duration: 0.8s; opacity: 1; }
 
+@media only screen and (max-width: 1024px) { .section, .section-main h1, nav, body, .section-main p { width: 100%; }
+  .section { width: 80%; margin-left: 10%; }
+  nav { top: 40px; margin-left: 0; position: fixed; left: 0; }
+  nav .brand-logo { left: 20px; -webkit-transform: none; transform: none; }
+  nav .btn-nav-container { right: 20px; top: 3px; transform-origin: none; }
+  .section-main { padding-top: 214px; }
+  .section-main h1 { width: 80%; margin-left: 10%; font-size: 1.8rem; white-space: pre-line; line-height: normal; letter-spacing: normal; padding: 0 0.75rem; }
+  .section-main h1 span { display: inline; }
+  .section-main p { padding: 0 0.75rem; }
+  .section-full-information { margin-top: 0; }
+  .command-photo-about { min-height: auto; padding-top: 212px; } }
+
 @media only screen and (max-width: 599px), only screen and (orientation: landscape) and (max-width: 959px) { body { max-width: 100%; }
   body section { overflow-x: hidden; }
   .section, .section-main h1, nav, body, .section-main p { width: 100%; }
   .section-main { padding-top: 214px; }
-  .section-main h1 { font-size: 1.8rem; white-space: pre-line; line-height: normal; letter-spacing: normal; padding: 0 0.75rem; }
+  .section-main h1 { width: 100%; margin-left: 0; font-size: 1.8rem; white-space: pre-line; line-height: normal; letter-spacing: normal; padding: 0 0.75rem; }
   .section-main h1 span { display: inline; }
   .section-main p { padding: 0 0.75rem; }
   .section-main svg { fill: black; width: 32px; height: 32px; }

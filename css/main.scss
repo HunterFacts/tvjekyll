@@ -528,50 +528,6 @@ transform: rotate(-45deg);
             animation: parlor-button-wave-scale-animation 5s infinite;
     }
 }
-@media only screen and (max-width:1024px) {
-    .section, .section-main h1, nav, body, .section-main p {
-        width: 100%;
-    }
-    nav {
-        top: 40px;
-        margin-left: 0;
-        position: fixed;
-        left: 0;
-        .brand-logo {
-            left: 20px;
-            -webkit-transform: none;
-            transform: none;
-        }
-        .btn-nav-container {
-            right: 20px;
-            top: 3px;
-            transform-origin: none;
-        }
-    }
-    .section-main{
-        padding-top: 214px;
-        h1 {
-            font-size: 1.8rem;
-            white-space:pre-line;
-            line-height: normal;
-            letter-spacing: normal;
-            padding: 0 0.75rem;
-            span {
-                display: inline;
-            }
-        } 
-        p {
-            padding: 0 0.75rem;
-        }
-    }
-    .section-full-information {
-        margin-top: 0;
-    }
-    .command-photo-about {
-        min-height: auto;
-        padding-top: 212px;
-    }
-}
 
 @keyframes showblocks {
     from {
@@ -640,6 +596,59 @@ transform: rotate(-45deg);
         opacity: 1;
     }
 }
+
+@media only screen and (max-width:1024px) {
+    .section, .section-main h1, nav, body, .section-main p {
+        width: 100%;
+    }
+    .section {
+        width: 80%;
+        margin-left: 10%;
+    }
+    nav {
+        top: 40px;
+        margin-left: 0;
+        position: fixed;
+        left: 0;
+        .brand-logo {
+            left: 20px;
+            -webkit-transform: none;
+            transform: none;
+        }
+        .btn-nav-container {
+            right: 20px;
+            top: 3px;
+            transform-origin: none;
+        }
+    }
+    .section-main{
+        padding-top: 214px;
+        h1 {
+            width: 80%;
+            margin-left: 10%;
+            font-size: 1.8rem;
+            white-space:pre-line;
+            line-height: normal;
+            letter-spacing: normal;
+            padding: 0 0.75rem;
+            span {
+                display: inline;
+            }
+        } 
+        p {
+            padding: 0 0.75rem;
+        }
+    }
+    .section-full-information {
+        margin-top: 0;
+    }
+    .command-photo-about {
+        min-height: auto;
+        padding-top: 212px;
+    }
+}
+
+
 @media only screen and (max-width:599px), only screen and (orientation: landscape) and (max-width: 959px) {
     body {
         max-width: 100%;
@@ -654,6 +663,8 @@ transform: rotate(-45deg);
     .section-main{
         padding-top: 214px;
         h1 {
+            width: 100%;
+            margin-left: 0;
             font-size: 1.8rem;
             white-space:pre-line;
             line-height: normal;
