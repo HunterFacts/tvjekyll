@@ -10,10 +10,14 @@
     <title>Траектория времени</title>
     </head>
     <body> 
+    <div id="p_prldr">
+        <div class="clock-icon"></div>
+        <div class="clock-icon-red"></div>
+    </div>
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="./" class="brand-logo">
+                <a href="./" class="brand-logo transition">
                     <svg height="60" id="logoSvg" width="75" viewBox="0 0 120 120" version="1.1"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle class="circle-right" cx="75" cy="60" r="60" fill="#BD241F"/>
@@ -32,20 +36,41 @@
         <div class="bg2"></div>
         <div class="container">
             <ul class="main-nav">
-                <li><a href="./">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="products.html">Продукты</a></li>
+                <li><a class="transition" href="./">Главная</a></li>
+                <li><a class="transition" href="about.html">О нас</a></li>
+                <li><a class="transition" href="products.html">Продукты</a></li>
             </ul>
         </div>
     </div>
+
+    
+
 <script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(window).on('load', function () {
+    var $preloader = $('#p_prldr'),
+        $svg_anm   = $preloader.find('.svg_anm');
+    $svg_anm.fadeOut();
+    $preloader.delay(500).fadeOut('slow');
+
+    $("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(400, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}
+});
+</script>
 <script src="js/materialize.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.viewportchecker.js"></script>
 <script src="js/main.js"></script>
 <main>
     <div class="preview-product">
-    <div class="close"><a href="#" onclick="closePreview()" class="close"></a></div>
+    <div class="close"><a onclick="closePreview()" class="close pointer"></a></div>
     <div class="img-preview">
         <img>
     </div>
@@ -64,7 +89,7 @@
         <div class="row">
             <div class="col s12 xl6">   
                 <div class="image-project">
-                    <a href="#" onclick="openPreview(this);">
+                    <a class="pointer" onclick="openPreview(this);">
                         <img class="responsive-img is-animate" src="img/armti.jpg">
                     </a>
                     <span class="hidden-text">
@@ -87,7 +112,7 @@
             </div>
             <div class="col s12 xl6">
                 <div class="image-project mk-project">
-                    <a href="#" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/mk1.jpg"></a>
+                    <a class="pointer" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/mk1.jpg"></a>
                     <span class="hidden-text">
                         «Т-Мобис.Мобильный контроллёр» предназначен для автоматизированной обработки первичных документов и всей сопутствующей оперативной информации в работе тепловой инспекции теплосетевой компании.
         
@@ -106,7 +131,7 @@
         <div class="row">
             <div class="col s12 xl6">
                 <div class="image-project mk-project">
-                    <a href="#" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/250x500.png"></a>
+                    <a class="pointer" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/blockchain.jpg"></a>
                     <span class="hidden-text">
                         <h4>Блокчейн</h4>
                         Данное решение позволяет получать всю актуальную информацию о состоянии очереди в текущий момент времени, отслеживать динамику движения, плановую дату достижения цели. Прозрачность доступа к информации обусловлена созданием технологии распределенного реестра, с помощью блокчейн-платформы с открытым исходным кодом — Bitfury Exonum. Решение для организации очередей обеспечивает:
@@ -119,7 +144,7 @@
             </div>
             <div class="col s12 xl6">
                 <div class="image-project">
-                    <a href="#" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/484.png"></a>
+                    <a class="pointer" onclick="openPreview(this);"><img class="responsive-img is-animate" src="img/academ.jpg"></a>
                     <span class="hidden-text">
                         «Т-Мобис.Диспетчерская» - надёжный инструмент контроля за состоянием систем теплопотребления 
                         
