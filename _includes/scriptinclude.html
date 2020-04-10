@@ -1,4 +1,22 @@
 <script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(window).on('load', function () {
+    var $preloader = $('#p_prldr'),
+        $svg_anm   = $preloader.find('.svg_anm');
+    $svg_anm.fadeOut();
+    $preloader.delay(500).fadeOut('slow');
+
+    $("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("body").fadeOut(400, redirectPage);
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}
+});
+</script>
 <script src="js/materialize.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.viewportchecker.js"></script>
