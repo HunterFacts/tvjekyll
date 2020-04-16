@@ -30,6 +30,7 @@ nav {
     height: 0;
     z-index: 100;
 }
+
 header {position:relative;}
 a {text-decoration:none;text-transform:uppercase;}
 ul {list-style:none;}
@@ -49,15 +50,55 @@ ul {list-style:none;}
 .float-nav {position:fixed;top:0;display:none;width:100%;height:100%;z-index:99;}
 .float-nav .bg1, .float-nav .bg2 {position:absolute;width:100%;height:100vh;background:rgba(21, 20, 26, 0.6);top:0;left:100%;transition:all 0.7s ease 0.3s;}
 .float-nav .bg2 {background:rgba(21, 20, 26, 1);transition-delay:0s;}
-.float-nav .container {position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;max-width:none;}
-.float-nav ul {display:flex;flex-direction:column;max-height:100vh;opacity:0;transition:all 0.3s ease 0s;padding:0;}
-.float-nav ul li {flex:1;margin-bottom:20px;text-align:center;}
+.float-nav .container {position:absolute;top:0;left:0;width:100%;height:100%;max-width:none;}
+.float-nav ul {
+    display:flex;flex-direction:column;max-height:100vh;opacity:0;transition:all 0.3s ease 0s;padding:0;width: auto;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+.float-nav ul li {flex:1;margin-bottom:20px;font-size:18px;color:#fff;letter-spacing:0.4em;}
 .float-nav ul li:last-child {margin-bottom:0;}
-.float-nav ul li a {font-size:16px;color:#fff;letter-spacing:0.4em;}
+.float-nav ul li a {
+    font-size:16px;color:#fff;letter-spacing:0.4em;
+    cursor: pointer;
+    &:hover {
+        color: #e0e0e0;
+    }
+
+}
+.float-nav ul li a.no-letter-spacing {
+    text-transform: none;
+    letter-spacing: 0.2em;
+    i {
+        transform: translate(0, -2.5px);
+    }
+}
 .float-nav.active .bg1, .float-nav.active .bg2  {left:0;}
 .float-nav.active .bg1 {transition-delay:0s;}
 .float-nav.active .bg2 {transition-delay:0.3s;}
 .float-nav.active ul {opacity:1;transition-delay:1s;}
 .btn-nav-container:active, .btn-nav-container:focus{
     background: none;
+}
+@keyframes flying {
+    0% {
+        opacity: 0.1;
+        transform: translate(0, 30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+.float-nav .container {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    right: 390px;
+    left: auto;
+    top: 30px;
+    animation-name: flying;
+    animation-duration: 0.3s;
+    opacity: 1;
 }

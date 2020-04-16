@@ -3,14 +3,28 @@ layout: default
 title: "Траектория времени"
 
 ---
+
+<div class="preview-product">
+    <div class="close"><a onclick="closePreview()" class="close pointer"></a></div>
+    <div class="swiper-preview swiper-container">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="text-preview">
+        <p>
+            
+        </p>     
+    </div>                          
+</div>
 <section class="section-main">
     <h1>
         {% assign mainpagetext = site.data.maintext["mainpagetext"] %}
-        <span class="is-animate">{{ mainpagetext.maintext.text1 }}</span>
-        <span class="is-animate-two">{{ mainpagetext.maintext.text2 }}</span>
-        <span class="is-animate-last">{{ mainpagetext.maintext.text3 }}</span>
+        <span>{{ mainpagetext.maintext.text1 }}</span>
+        <span>{{ mainpagetext.maintext.text2 }}</span>
+        <span>{{ mainpagetext.maintext.text3 }}</span>
     </h1>
-    <div class="img-main is-animate-last">
+    <div class="img-main">
         <img src="img/69369319_401617683892133_7863953078796419072_o.png" alt="" class='responsive-img'>
     </div>
 </section>
@@ -32,32 +46,113 @@ title: "Траектория времени"
     </div>  
 </section>
 <section class="section section-projects">
+    <h1>
+        <span class="is-animate">Продукты</span>
+    </h1>
     <div class="row">
-        <div class="col s12 xl6">   
+        <div class="col s12 xl6 is-animate">          
             <div class="image-project">
-                <img class="responsive-img is-animate" src="img/armti.jpg">
+                <a onclick="openPreview(this);">
+                    <div class="box-pointer box-pointer2 box-pointer-hidden">
+                        <div class="black-box">Посмотреть подробнее</div>
+                    </div>
+                </a>  
+                <a onclick="openPreview(this);">
+                    <img class="responsive-img is-animate" src="img/armti.jpg">
+                </a>
+                <div class="hidden-block-img">
+                    <span data-img="img/screen/screentmobis1.png"></span>
+                    <span data-img="img/screen/screentmobis2.png"></span>
+                    <span data-img="img/screen/screentmobis3.png"></span>
+                    <span data-img="img/screen/screentmobis4.png"></span>
+                </div>
+                <span class="hidden-text">
+                    «Т-Мобис.Мобильный инспектор» предназначен для автоматизированной обработки первичных документов и всей сопутствующей оперативной информации в работе тепловой инспекции теплосетевой компании.
+                    
+                    Решаемые задачи:
+                    Оформление тепловыми инспекторами первичных документов в электронном виде на мобильных устройствах, в т.ч. в режиме недоступности сети Internet;
+                    Ведение электронных журналов;
+                    Отображение объектов тепловой сети на электронной карте;
+                    Формирование отчетности;
+                    Отправка отчетов по электронной почте абонентам в ручном и автоматическом режиме;
+                    Интеграция с другими корпоративными информационными системами теплосетевой компании.
+                    <a href="http://www.timepath.ru/doc/%D0%A1%D0%B2%D0%B8%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%BE_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%A2_%D0%9C%D0%BE%D0%B1%D0%B8%D1%81.pdf">
+                        Свидетельство о государственной регистрации программы для ЭВМ № 2017-662201 от 01 ноября 2017 г. Программный комплекс «Т-Мобис» Правообладатель: ООО «Траектория времени»
+                    </a>
+                </span>
             </div>
-            <h5 class="project-h is-animate-two">Мобильный инспектор</h5>
+            <h5 class="project-h">Мобильный инспектор</h5>
         </div>
         <div class="col s12 xl6">
             <div class="image-project mk-project">
-                <img class="responsive-img is-animate" src="img/mk1.jpg">
+                <a>
+                    <div class="box-pointer box-pointer2 box-pointer-hidden">
+                        <div class="gray-box">Скоро</div>
+                    </div>
+                </a>
+                <a>
+                    <img class="responsive-img" src="img/mk1.jpg">
+                </a>
             </div>
-            <h5 class="project-h is-animate-two">Мобильный контролёр</h5>
+            <h5 class="project-h">Мобильный контролёр</h5>
         </div>
     </div>
     <div class="row">
-        <div class="col s12 xl6">
+        <div class="col s12 xl6 is-animate">
             <div class="image-project mk-project">
-                <img class="responsive-img is-animate" src="img/blockchain.jpg">
+                <a onclick="openPreview(this);">
+                    <div class="box-pointer box-pointer2 box-pointer-hidden">
+                        <div class="black-box">Посмотреть подробнее</div>
+                    </div>
+                </a>
+                <a onclick="openPreview(this);">
+                <img class="responsive-img" src="img/blockchain.jpg">
+                </a>
+                <div class="hidden-block-img">
+                    <span data-img="img/screen/screentmobis8.png"></span>
+                    <span data-img="img/screen/screentmobis9.png"></span>
+                </div>
+                <span class="hidden-text">
+                    <h4>Блокчейн-платформа для ведения жилищных очередей</h4>
+                    Данное решение позволяет получать всю актуальную информацию о состоянии очереди в текущий момент времени, отслеживать динамику движения, плановую дату достижения цели. Прозрачность доступа к информации обусловлена созданием технологии распределенного реестра, с помощью блокчейн-платформы с открытым исходным кодом — Bitfury Exonum. Решение для организации очередей обеспечивает:
+                    Прозрачность движения в очереди
+                    Корректность данных
+                    Безопасность и аудит любых изменений
+                </span>
             </div>
-            <h5 class="project-h is-animate-two">Блокчейн</h5>
+            <h5 class="project-h">Блокчейн-платформа для ведения жилищных очередей</h5>
         </div>
         <div class="col s12 xl6">
-            <div class="image-project">
-                <img class="responsive-img is-animate" src="img/academ.jpg">
+            <div class="image-project is-animate">
+                <a class="pointer" onclick="openPreview(this);">
+                    <div class="box-pointer box-pointer2 box-pointer-hidden">
+                        <div class="black-box">Посмотреть подробнее</div>
+                    </div>
+                </a>
+                <a onclick="openPreview(this);">
+                    <img class="responsive-img" src="img/academ.jpg">
+                </a>
+                <div class="hidden-block-img">
+                    <span data-img="img/screen/screentmobis5.png"></span>
+                    <span data-img="img/screen/screentmobis6.png"></span>
+                    <span data-img="img/screen/screentmobis7.png"></span>
+                </div>
+                <span class="hidden-text">
+                    «Т-Мобис.Диспетчерская» - надёжный инструмент контроля за состоянием систем теплопотребления 
+                    
+                    Решаемые задачи:
+                    Является основным рабочим инструментом сотрудников тепловых инспекций
+                    Автоматизирует обработку оперативной информации и первичных документов в работе тепловой инспекции
+                    Помогает организовать контроль эксплуатации энергоустановок потребителями на основе собираемых данных
+                    Учитывает специфику предприятий коммунальной сферы, отраслевые стандарты и типовые процессы теплотранспортных и сетевых компаний
+                    Свидетельство о государственной регистрации программы для ЭВМ № 2017-662201 от 01 ноября 2017 г. Программный комплекс «Т-Мобис» Правообладатель: ООО «Траектория времени»
+                    <a href="http://www.timepath.ru/doc/%D0%A1%D0%B2%D0%B8%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%BE_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%A2_%D0%9C%D0%BE%D0%B1%D0%B8%D1%81.pdf">
+                        Свидетельство о государственной регистрации программы для ЭВМ № 2017-662201 от 01 ноября 2017 г. Программный комплекс «Т-Мобис» Правообладатель: ООО «Траектория времени»
+                    </a>
+                </span>
+                
             </div>
-            <h5 class="project-h is-animate-two">Академический</h5>
+            <h5 class="project-h">Диспетчерская</h5>
         </div>
     </div>
 </section>
@@ -82,7 +177,7 @@ title: "Траектория времени"
     </div>
 </section>
 <section class="section section-command-photo">
-    <div class="swiper-container">
+    <div class="swiper-container swiper-container-photo">
         <div class="swiper-wrapper">
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/150.png"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/700x400.png"></div>
@@ -117,39 +212,19 @@ title: "Траектория времени"
     </div>
 </section>
 <div class="background-section-questions">
-    <section class="section section-questions">
+    <!--<section class="section section-questions">
         <div class="row">
             <div class="col s12">
                 <h4>FAQ</h4>
                 <ul class="collapsible">
                     <li class="is-animate">
-                        <div class="collapsible-header"><h5>Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки существенных финансовых</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li class="is-animate">
-                        <div class="collapsible-header"><h5>Равным образом укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li class="is-animate-two">
-                        <div class="collapsible-header"><h5>С другой стороны новая модель организационной деятельности требуют определения и уточнения форм развития.</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li class="is-animate-two">
-                        <div class="collapsible-header"><h5>Равным образом укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li class="is-animate-last">
-                        <div class="collapsible-header"><h5>С другой стороны новая модель организационной деятельности требуют определения и уточнения форм развития.</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li class="is-animate-last">
-                        <div class="collapsible-header"><h5>Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки существенных финансовых</h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
+                        <div class="collapsible-header"><h5></h5><i class="material-icons notranslate" translate="no">arrow_drop_down</i></div>
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                 </ul>
             </div>
         </div>
-    </section>
+    </section>-->
 </div>
 
 <script>
@@ -158,7 +233,7 @@ title: "Траектория времени"
         offset: 100,
         callbackFunction: function(elem, action){
             var currentNumber = $('.quantity-numberuser').text();
-            $({numberValue: currentNumber}).animate({numberValue: 14}, {
+            $({numberValue: currentNumber}).animate({numberValue: 18}, {
                 duration: 800,
                 easing: 'linear',
                 step: function() { 
@@ -172,7 +247,7 @@ title: "Траектория времени"
         offset: 100,
         callbackFunction: function(elem, action){
             var currentNumber = $('.quantity-numberyear').text();
-            $({numberValue: currentNumber}).animate({numberValue: 7}, {
+            $({numberValue: currentNumber}).animate({numberValue: 5}, {
                 duration: 800,
                 easing: 'linear',
                 step: function() { 
@@ -181,4 +256,72 @@ title: "Траектория времени"
             });
         },
     });   
+
+(function () {
+    'use strict';
+    var boxElems = document.querySelectorAll('.image-project');
+    function onMouseMove(event) {
+        var mouseX = event.pageX;
+        var mouseY = event.pageY;
+        for (var boxElem of boxElems) {
+            var pointerElem = boxElem.childNodes[0].nextElementSibling.childNodes[0].nextElementSibling;
+            var crd = boxElem.getBoundingClientRect();
+            var activePointer = crd.left <= mouseX && mouseX <= crd.right && (crd.top + pageYOffset) <= mouseY && mouseY <= (crd.bottom + pageYOffset);
+            if (crd.left <= mouseX && mouseX <= crd.right && (crd.top + pageYOffset) <= mouseY && mouseY <= (crd.bottom + pageYOffset)) {
+                if (pointerElem.classList.contains('box-pointer-hidden')) {
+                    pointerElem.classList.remove('box-pointer-hidden');
+                }
+
+                pointerElem.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0px)';
+
+            } else {
+                pointerElem.classList.add('box-pointer-hidden');
+            }
+        }
+    }
+    function disablePointer() {
+        requestAnimationFrame(function hidePointer() {
+            for (var boxElem of boxElems) {
+                boxElem.childNodes[0].nextElementSibling.childNodes[0].nextElementSibling.classList.add('box-pointer-hidden');
+            }
+        });
+    }
+    for (var boxElem of boxElems) {
+        boxElem.addEventListener('mousemove', onMouseMove, false);
+        boxElem.addEventListener('mouseleave', disablePointer, false);
+    }
+})();
+
+    function openPreview (self){
+        let previewLink = $(self),
+        previewImg = $(previewLink.parent()).children("a").children("img"),
+        previewText = previewLink.siblings('span.hidden-text'),
+        imgList = $(previewLink.parent()).children(".hidden-block-img").children("span");
+        $('.preview-product .swiper-wrapper').html("");
+        $('.preview-product .swiper-wrapper').append('<div class="swiper-slide photo-container"><img src="'+previewImg.attr('src')+'"></div>');
+        imgList.each(function() {
+            $('.preview-product .swiper-wrapper').append('<div class="swiper-slide photo-container"><img src="'+$(this).data("img")+'"></div>');
+        }).promise().done( function(){
+            $('.preview-product').addClass('visible-preview');
+                var swiper = new Swiper('.swiper-preview', {
+                slidesPerView: 1,
+                speed: 400,
+                spaceBetween: 100,
+                loop: true,
+                pagination: {
+                    //el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+        $('.preview-product .text-preview p').html(previewText.html());
+    }
+    function closePreview(){
+        $( ".preview-product" ).animate({
+        opacity: 0.1, // прозрачность элемента
+	    }, 400, 'linear', function (){
+            $('.preview-product').attr('style', '');
+            $('.preview-product').removeClass('visible-preview');
+        });
+    }
 </script>
