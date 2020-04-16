@@ -9,6 +9,10 @@
 body {
     min-height:100vh;
 }
+main {
+    overflow-x: hidden;
+    position: relative;
+}
 @import '_navbar.scss';
 .logoSvgColor {
     background-color: white;
@@ -98,6 +102,7 @@ h1 span:nth-child(1) {
         padding: 20px;
         transition: 0.3s;
         &:hover{
+            cursor: none;
             padding: 5px;
         }
     }
@@ -324,7 +329,76 @@ footer.page-footer {
         }
     }
 }
-
+.business-card {
+    width: 650px;
+    color: black;
+    .bs-flex {
+        display: flex;
+    }
+    .left-panel {
+        margin-left: 30px;
+        border-right: 1px solid;
+        margin-right: 30px;
+        padding-right: 30px;
+        .img-card {
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background: url("../img/tv.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+        }
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 0;
+        }
+    }
+    .right-panel {
+        .name-director {
+            font-size: 20px;
+            font-weight: bold;
+            color: #cc3333;
+        }
+        .director-text {
+            font-size: 16px;
+        }
+        .text-bc {
+            font-size: 14px;
+            display: inline-block;
+            height: 3rem;
+            a {
+                line-height: 3rem;
+                i {
+                    margin-right: 3px;
+                    transform: translate(0, 9px);
+                }
+                font-size: 14px;
+            }
+        }
+    }
+}
+#modaljobs {
+    border-radius: 30px;
+    background: url(../img/photo-1557187666-4fd70cf76254.webp);
+    height: 50vh;
+    width: 40%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    .modal-text {
+        background-color: white;
+        color: black;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-top: 30px;
+        svg {
+            margin-left: 5px;
+        }
+    }
+}
 #p_prldr {
     position: fixed;
     left: 0;
@@ -456,7 +530,29 @@ footer.page-footer {
     display: none;
     justify-content: center;
     align-items: center;
-    
+    .swiper-preview {
+        width: 50%;
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: show-previe-img;
+        animation-duration: 1s;
+        opacity: 1;
+        padding: 20px;
+        .swiper-slide.photo-container {
+            height: calc(100vh - 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 100%;
+                max-height: calc(100vh - 40px);
+                margin: 20px;
+            }
+        }
+    }
     .img-preview {
         width: 50%;
         position: relative;
@@ -470,14 +566,13 @@ footer.page-footer {
         padding: 20px;
         img {
             max-width: 100%;
-            
             max-height: calc(100vh - 40px);
             margin: 20px;
         }
         
     }
     .text-preview {
-        width: 40%;
+        width: 45%;
         display: flex;
         white-space: pre-line;
         color: white;
@@ -519,6 +614,62 @@ transform: rotate(-45deg);
 }
 a.pointer {
     cursor: pointer;
+}
+
+.box {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 1px solid #444444;
+    overflow: hidden;
+}
+.space {
+    display: inline-block;
+    width: 100px;
+}
+@-webkit-keyframes fading-block{
+    from {
+        padding: 10px;
+        opacity: 0.1;
+    }
+    to {
+        padding: 15px;
+        opacity: 1;
+    }
+}
+.box-pointer {
+    position: absolute;
+    padding: 5px;
+    font-size: 18px;
+    color: white;
+
+    .black-box {
+        background-color: black;
+        display: inline;
+        padding: 15px;
+        -webkit-animation: fading-block 0.6s;
+        animation: fading-block 0.6s;
+    }
+    .gray-box {
+        color: black;
+        background-color: gainsboro;
+        display: inline;
+        padding: 15px;
+        -webkit-animation: fading-block 0.6s;
+        animation: fading-block 0.6s;
+    }
+}
+.box-pointer-hidden {
+    display: none;
+}
+.box-pointer2 {
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 0ms cubic-bezier(0.1, 0.57, 0.1, 1);
+}
+.hidden-block-img {
+    display: none;
 }
 @-webkit-keyframes parlor-button-animation {
 5% {
@@ -749,10 +900,21 @@ a.pointer {
         min-height: auto;
         padding-top: 212px;
     }
+    .float-nav .container {
+        right: 15px;
+        left: auto;
+        top: 25px;
+    }
 }
 
 
 @media only screen and (max-width:599px), only screen and (orientation: landscape) and (max-width: 959px) {
+    #modaljobs {
+        border-radius: 30px;
+        background: url(../img/photo-1557187666-4fd70cf76254.webp);
+        height: 100vh;
+        width: 100%;
+    }
     body {
         max-width: 100%;
         section {
@@ -845,12 +1007,50 @@ a.pointer {
     footer.page-footer .section-footer .footer-firstcontainer {
         margin-bottom: 54px;
     }
+    
+    a.close {
+        top: 8px;
+        right: 8px;
+    }
+    .float-nav .container {
+        right: auto;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        padding-top: 70px;
+        ul {
+            margin-left: 25px;
+            &:first-child {
+                margin-top: 100px;
+                a {
+                    font-size: 18px;
+                }
+            }
+            &:last-child {
+                position: absolute;
+                bottom: 20px;
+            }
+        }
+
+    }
+}
+@media only screen and (max-width:1024px), only screen and (orientation: landscape) and (max-width: 1366px){
     .preview-product {
         flex-wrap: wrap;
         min-height: 100vh;
         height: auto;
         overflow-y: scroll;
         height: 100%;
+        .swiper-preview {
+            display: none;
+            .swiper-slide.photo-container {
+                display: none;
+                img {
+                    display: none;
+                }
+            }
+        }
         .img-preview {
             display: none;
         }
@@ -865,11 +1065,120 @@ a.pointer {
             padding: 10px;
         }
     }
-    a.close {
-        top: 8px;
-        right: 8px;
+    .box-pointer {
+        display: none;
+    }
+    #modaljobs {
+        border-radius: 30px;
+        background: url(../img/photo-1557187666-4fd70cf76254.webp);
+        height: 100vh;
+        width: 80%;
     }
 }
-@media only screen and (max-width:1024px), only screen and (orientation: landscape) and (max-width: 1366px){
-
+@media only screen and (max-width:650px) {
+    .business-card {
+        width: 350px;
+        .left-panel {
+            margin-left: 10px;
+            border-right: 1px solid;
+            margin-right: 15px;
+            padding-right: 5px;
+            .img-card {
+                margin: auto;
+                width: 75px;
+                height: 75px;
+                background: url("../img/tv.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-top: 10px;
+            }
+            h3 {
+                font-size: 18px;
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+        .right-panel {
+            .name-director {
+                font-size: 16px;
+            }
+            .director-text {
+                font-size: 14px;
+            }
+            .text-bc {
+                font-size: 14px;
+                height: 1rem;
+                a {
+                    line-height: 1rem;
+                    i {
+                        line-height: 1rem;
+                        margin-right: 3px;
+                        transform: translate(0, 7px);
+                        font-size: 24px;
+                    }
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:350px) {
+    .business-card {
+        width: 300px;
+        .left-panel {
+            margin-left: 5px;
+            border-right: 1px solid;
+            margin-right: 5px;
+            padding-right: 5px;
+            .img-card {
+                margin: auto;
+                width: 65px;
+                height: 65px;
+                background: url("../img/tv.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-top: 10px;
+            }
+            h3 {
+                font-size: 16px;
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+        .right-panel {
+            .name-director {
+                font-size: 16px;
+            }
+            .director-text {
+                font-size: 14px;
+            }
+            .text-bc {
+                font-size: 14px;
+                height: 1rem;
+                a {
+                    line-height: 1rem;
+                    i {
+                        line-height: 1rem;
+                        margin-right: 3px;
+                        transform: translate(0, 7px);
+                        font-size: 24px;
+                    }
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:599px), only screen and (orientation: landscape) and (max-width: 959px) {
+    #modaljobs {
+        border-radius: 30px;
+        background: url(../img/photo-1557187666-4fd70cf76254.webp);
+        height: 100vh;
+        width: 100%;
+        .modal-content {
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
 }

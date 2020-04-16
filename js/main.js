@@ -27,28 +27,31 @@ function changeColorMenuBtn (){
 $(document).ready(function(){
     $('.open-menu').removeAttr('disabled');	
     $('header').on('click','.open-menu',function() {
-        $(this).addClass('close-menu').removeClass('open-menu').attr('disabled','disabled');
-        $('.container').addClass('blur');
-        setTimeout(function(){
-            $('.close-menu').removeAttr('disabled');
-        },1100);
-        $('.float-nav').show();
-        setTimeout(function(){
-            $('.float-nav').addClass('active');
+        if ( ($(window).width() < '960' && (window.matchMedia("(orientation: landscape)").matches))||
+        ($(window).width() < '600' && (window.matchMedia("(orientation: portrait)").matches))) {
             changeCircleLogo(true);
-            $('.btn-nav').addClass("btn-nav-white");
-            $("#logoSvg").addClass("logoSvgColor")
-        },100);
+            $("#logoSvg").addClass("logoSvgColor");
+        }
+        $(this).addClass('close-menu').removeClass('open-menu').attr('disabled','disabled');
+        $('.float-nav').prop('style', '');
+        $('.container').addClass('blur');
+        $('.float-nav').show();
+        $('.float-nav').addClass('active');
+        $('.btn-nav').addClass("btn-nav-white");
+        $('.close-menu').removeAttr('disabled');
     });
     function fechaMenu(){
-        changeCircleLogo(false);
-        changeColorMenuBtn();
         $('.close-menu').removeClass('close-menu').addClass('open-menu').attr('disabled','disabled');
+        changeCircleLogo();
+        changeColorMenuBtn();
         $('.float-nav').removeClass('active');
-        setTimeout(function(){
+        $('.float-nav').animate({
+            opacity: 0.1, // прозрачность элемента
+            transform: 'translate(0, 30px)'
+        }, 300, 'swing', function(){
             $('.float-nav').hide();	
             $('.open-menu').removeAttr('disabled');		
-        },1100);
+        });
     }
     $('header').on('click','.close-menu',function(){
         fechaMenu();
@@ -71,7 +74,7 @@ $(document).ready(function(){
         slidesPerView = 1;
         spaceBetween = 0;
     }
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.swiper-container-photo', {
         slidesPerView: slidesPerView,
         spaceBetween: spaceBetween,
         pagination: {
@@ -89,4 +92,5 @@ $(document).ready(function(){
         classToAdd: 'is-animate-active', // Class to add to the elements when they are visible,
         offset: 100, // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
     });
+    $('.modal').modal();
 });
