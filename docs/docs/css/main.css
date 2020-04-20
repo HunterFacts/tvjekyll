@@ -3441,6 +3441,8 @@ h1 span:nth-child(1) { transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .section-work-to-clients { margin-top: 144px; }
 
+.section-work-to-clients.fix-margin { margin-top: 54px; }
+
 .section-work-to-clients .collapsible { background: none; box-shadow: none; border: none; padding: 0; margin-top: 0; }
 
 .section-work-to-clients .collapsible li, .section-work-to-clients .collapsible .collapsible-header, .section-work-to-clients .collapsible .collapsible-body { border: none; }
@@ -3738,6 +3740,8 @@ a.pointer { cursor: pointer; }
 .is-animate-last { opacity: 0; }
 
 .is-animate-last.is-animate-active { animation-name: showblockslast; animation-duration: 0.8s; opacity: 1; }
+
+.no-big-font { text-transform: none; }
 
 @media only screen and (max-width: 1024px) { .section, .section-main h1, nav, body, .section-main p { width: 100%; }
   .section { width: 80%; margin-left: 10%; }
