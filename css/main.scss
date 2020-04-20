@@ -77,6 +77,9 @@ h1 span:nth-child(1) {
     margin-top: 218px;
 }
 .section-work-to-clients {
+    &.fix-margin {
+        margin-top: 54px;
+    }
     margin-top: 144px;
     .collapsible {
         background: none;
@@ -864,7 +867,9 @@ a.pointer {
         opacity: 1;
     }
 }
-
+.no-big-font {
+    text-transform: none;
+}
 @media only screen and (max-width:1024px) {
     .section, .section-main h1, nav, body, .section-main p {
         width: 100%;
