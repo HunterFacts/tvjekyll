@@ -69,7 +69,7 @@ $(document).ready(function(){
         }
     });
     let slidesPerView = 3;
-    let spaceBetween = 30;
+    let spaceBetween = 10;
     if ($(window).width() <= '599' || ((window.matchMedia("(orientation: landscape)").matches) && $(window).width() <= '959')){
         slidesPerView = 1;
         spaceBetween = 0;
@@ -81,7 +81,6 @@ $(document).ready(function(){
             //el: '.swiper-pagination',
             clickable: true,
         },
-        loop: true,
     });
     $(window).scroll(function() {
         if (!$(".float-nav").hasClass("active")){
@@ -94,3 +93,40 @@ $(document).ready(function(){
     });
     $('.modal').modal();
 });
+var pageOffset;
+function openPreview (self){
+    let previewLink = $(self),
+    previewImg = $(previewLink.parent()).children("a").children("img"),
+    previewText = previewLink.siblings('span.hidden-text'),
+    imgList = $(previewLink.parent()).children(".hidden-block-img").children("span");
+    pageOffset = window.pageYOffset;
+    $('.preview-product .swiper-wrapper').html("");
+    $('.preview-product .swiper-wrapper').append('<div class="swiper-slide photo-container"><img src="'+previewImg.attr('src')+'"></div>');
+    imgList.each(function() {
+        $('.preview-product .swiper-wrapper').append('<div class="swiper-slide photo-container"><img src="'+$(this).data("img")+'"></div>');
+    }).promise().done( function(){
+        $('.preview-product').addClass('visible-preview');
+        $('main').addClass('main-hide');
+            var swiper = new Swiper('.swiper-preview', {
+            slidesPerView: 1,
+            speed: 400,
+            spaceBetween: 100,
+            loop: true,
+            pagination: {
+                //el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    });
+    $('.preview-product .text-preview p').html(previewText.html());
+}
+function closePreview(){
+    $('main').removeClass('main-hide');
+    window.scrollTo(0,pageOffset);
+    $( ".preview-product" ).animate({
+    opacity: 0.1, // прозрачность элемента
+    }, 400, 'linear', function (){
+        $('.preview-product').attr('style', '');
+        $('.preview-product').removeClass('visible-preview');
+    });
+}

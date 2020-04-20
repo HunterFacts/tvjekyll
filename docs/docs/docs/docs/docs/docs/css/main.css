@@ -3342,6 +3342,8 @@ body { min-height: 100vh; }
 
 main { overflow-x: hidden; position: relative; }
 
+main.main-hide { overflow-y: hidden; position: relative; max-height: 10vh; }
+
 .brand-logo { height: 60px; top: -12px; left: -90px; width: 75px; height: 61px; position: absolute; transition: 500ms opacity cubic-bezier(0.165, 0.84, 0.44, 1), 200ms transform cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; transform-origin: 100% 50%; will-change: transform; }
 
 #logoSvg { border-radius: 30px; }
@@ -3467,7 +3469,7 @@ h1 span:nth-child(1) { transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .section-command-photo { width: 100%; }
 
-.section-command-photo .swiper-container .photo-container { max-height: 500px; height: 500px; display: flex; justify-content: center; align-items: center; padding: 25px; }
+.section-command-photo .swiper-container .photo-container { max-height: 500px; height: 500px; display: flex; justify-content: center; align-items: center; padding: 0; }
 
 .section-command-photo .swiper-container .photo-container img.responsive-img { max-height: 450px; }
 
@@ -3512,7 +3514,7 @@ h1 span:nth-child(1) { transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .background-section-capabilities .section-capabilities .collection { background: none; border: 0; }
 
-.background-section-capabilities .section-capabilities .collection li { background: none; border: 0; padding: 10px 5px; font-weight: bold; }
+.background-section-capabilities .section-capabilities .collection li { background: none; border: 0; padding: 5px 0px; font-size: 18px; font-weight: normal; }
 
 .section-full-information { color: white; margin-top: 0; padding-bottom: 114px; font-size: 20px; white-space: pre-line; padding: 1rem; }
 
@@ -3608,6 +3610,10 @@ footer.page-footer .section-footer .links-footer-container { font-size: 16px; }
 
 .preview-product .text-preview { width: 45%; display: flex; white-space: pre-line; color: white; font-size: 20px; animation-name: show-previe-text; animation-duration: 1s; }
 
+.preview-product .text-preview .ul-text-preview { white-space: normal; padding-left: 20px; }
+
+.preview-product .text-preview .ul-text-preview > li { list-style-type: disc; }
+
 .preview-product.visible-preview { display: flex; }
 
 a.close { position: absolute; right: 32px; top: 32px; width: 32px; height: 32px; opacity: 1; }
@@ -3635,9 +3641,9 @@ a.pointer { cursor: pointer; }
 
 .box-pointer { position: absolute; padding: 5px; font-size: 18px; color: white; }
 
-.box-pointer .black-box { background-color: black; display: inline; padding: 15px; -webkit-animation: fading-block 0.6s; animation: fading-block 0.6s; }
+.box-pointer .black-box { background-color: black; display: inline; padding: 15px; -webkit-animation: fading-block 0.3s; animation: fading-block 0.3s; }
 
-.box-pointer .gray-box { color: black; background-color: gainsboro; display: inline; padding: 15px; -webkit-animation: fading-block 0.6s; animation: fading-block 0.6s; }
+.box-pointer .gray-box { color: black; background-color: gainsboro; display: inline; padding: 15px; -webkit-animation: fading-block 0.3s; animation: fading-block 0.3s; }
 
 .box-pointer-hidden { display: none; }
 
