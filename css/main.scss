@@ -1064,38 +1064,12 @@ a.pointer {
     } 
 }
 @media only screen and (max-width:1024px), only screen and (orientation: landscape) and (max-width: 1366px){
-    .preview-product {
-        flex-wrap: wrap;
-        min-height: 100vh;
-        height: auto;
-        overflow-y: scroll;
-        height: 100%;
+    .preview-product { 
         .swiper-preview {
-            display: none;
-            .swiper-slide.photo-container {
-                display: none;
-                img {
-                    display: none;
-                }
-            }
-        }
-        .img-preview {
-            display: none;
+            width: 45%;
         }
         .text-preview {
-            width: 100%;
-            display: flex;
-            white-space: pre-line;
-            color: white;
-            font-size: 18px;
-            animation-name: show-previe-text;
-            animation-duration: 1s;
-            padding: 10px;
-            min-height: calc(100vh - 64px);
-            margin-top: 64px;
-            h4 {
-                margin-top: 0;
-            }
+            width: 50%;
         }
     }
     #modaljobs {
@@ -1103,6 +1077,16 @@ a.pointer {
         background: url(../img/photo-1557187666-4fd70cf76254.webp);
         height: 100vh;
         width: 80%;
+    }
+}
+@media only screen and (max-width:1250px) {
+    .preview-product { 
+        .swiper-preview {
+            width: 35%;
+        }
+        .text-preview {
+            width: 65%;
+        }
     }
 }
 @media only screen and (max-width:650px) {
@@ -1211,9 +1195,41 @@ a.pointer {
             }
         }
     }
-    .preview-product .text-preview {
-        margin-top: 35px;
+    .preview-product {
+        flex-wrap: wrap;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: scroll;
+        height: 100%;
+        .swiper-preview {
+            display: none;
+            .swiper-slide.photo-container {
+                display: none;
+                img {
+                    display: none;
+                }
+            }
+        }
+        .img-preview {
+            display: none;
+        }
+        .text-preview {
+            width: 100%;
+            display: flex;
+            white-space: pre-line;
+            color: white;
+            font-size: 18px;
+            animation-name: show-previe-text;
+            animation-duration: 1s;
+            padding: 10px;
+            min-height: calc(100vh - 64px);
+            margin-top: 35px;
+            h4 {
+                margin-top: 0;
+            }
+        }
     }
+    
 }
 @media only screen and (max-height:500px) and (orientation: landscape) and (max-width: 959px) {
     .float-nav .container  {
