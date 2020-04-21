@@ -3457,6 +3457,8 @@ h1 span:nth-child(1) { transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .section-work-to-clients svg { width: 100%; }
 
+.section-projects { margin-top: 78px; }
+
 .section-projects .image-project { padding: 20px; transition: 0.3s; }
 
 .section-projects .image-project:hover { cursor: none; padding: 5px; }
