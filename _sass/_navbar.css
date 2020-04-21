@@ -25,7 +25,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
   height: 60px;
 }
 
-nav {
+nav, .float-nav {
   top: 60px;
   width: 1002px;
   margin-left: -501px;
@@ -33,6 +33,31 @@ nav {
   left: 50%;
   height: 0;
   z-index: 100;
+}
+
+.float-nav {
+  display: none;
+}
+
+.float-nav .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.float-nav .container {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  right: -53px;
+  top: -26px;
+  left: auto;
+  animation-name: flying;
+  animation-duration: 0.3s;
+  opacity: 1;
 }
 
 header {
@@ -128,9 +153,6 @@ ul {
 
 .float-nav {
   position: fixed;
-  top: 0;
-  display: none;
-  width: 100%;
   height: 100%;
   z-index: 99;
 }
@@ -148,15 +170,6 @@ ul {
 .float-nav .bg2 {
   background: #15141a;
   transition-delay: 0s;
-}
-
-.float-nav .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
 }
 
 .float-nav ul {
@@ -234,16 +247,4 @@ ul {
     opacity: 1;
     transform: translate(0, 0);
   }
-}
-
-.float-nav .container {
-  width: 400px;
-  height: 400px;
-  background-color: black;
-  right: 390px;
-  left: auto;
-  top: 30px;
-  animation-name: flying;
-  animation-duration: 0.3s;
-  opacity: 1;
 }
