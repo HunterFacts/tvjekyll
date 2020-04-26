@@ -3354,6 +3354,14 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i { backgr
 
 nav, .float-nav { top: 60px; width: 1002px; margin-left: -501px; position: fixed; left: 50%; height: 0; z-index: 100; }
 
+nav .menu-web, .float-nav .menu-web { position: absolute; cursor: pointer; z-index: 999; background: transparent; border: none; outline: none; right: -190px; top: -20px; transform-origin: 10px 50%; }
+
+nav .menu-web > ul > li > a, .float-nav .menu-web > ul > li > a { color: black; text-shadow: 1px 1px 1px white; }
+
+nav .menu-web > ul > li ul, .float-nav .menu-web > ul > li ul { transform: translate(15px, 0); }
+
+nav .menu-web ul li, .float-nav .menu-web ul li { float: none; height: auto; line-height: 24px; }
+
 .float-nav { display: none; }
 
 .float-nav .container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-width: none; }
@@ -3366,7 +3374,7 @@ a { text-decoration: none; text-transform: uppercase; }
 
 ul { list-style: none; }
 
-.btn-nav-container { position: absolute; top: 0; right: 30px; width: 50px; height: 20px; cursor: pointer; z-index: 999; background: transparent; border: none; outline: none; right: -48px; top: -3px; transform-origin: 10px 50%; }
+.btn-nav-container { position: absolute; top: 0; right: 30px; width: 50px; height: 20px; cursor: pointer; z-index: 999; background: transparent; border: none; outline: none; right: -48px; top: -3px; transform-origin: 10px 50%; display: none; }
 
 .btn-nav { width: 100%; height: 3px; position: relative; background: black; top: 0; transition: all ease 0.2s; }
 
@@ -3762,6 +3770,9 @@ a.pointer { cursor: pointer; }
   .command-photo-about { min-height: auto; padding-top: 212px; }
   .float-nav .container { right: 15px; left: auto; top: -15px; }
   .section { margin-top: 118px; } }
+
+@media only screen and (max-width: 1400px) { .menu-web { display: none; }
+  .btn-nav-container { display: block; } }
 
 @media only screen and (max-width: 599px), only screen and (orientation: landscape) and (max-width: 959px) { #modaljobs { border-radius: 30px; background: url(../img/photo-1557187666-4fd70cf76254.webp); height: 100vh; width: 100%; }
   body { max-width: 100%; }

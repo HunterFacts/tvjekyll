@@ -35,6 +35,33 @@ nav, .float-nav {
   z-index: 100;
 }
 
+nav .menu-web, .float-nav .menu-web {
+  position: absolute;
+  cursor: pointer;
+  z-index: 999;
+  background: transparent;
+  border: none;
+  outline: none;
+  right: -190px;
+  top: -20px;
+  transform-origin: 10px 50%;
+}
+
+nav .menu-web > ul > li > a, .float-nav .menu-web > ul > li > a {
+  color: black;
+  text-shadow: 1px 1px 1px white;
+}
+
+nav .menu-web > ul > li ul, .float-nav .menu-web > ul > li ul {
+  transform: translate(15px, 0);
+}
+
+nav .menu-web ul li, .float-nav .menu-web ul li {
+  float: none;
+  height: auto;
+  line-height: 24px;
+}
+
 .float-nav {
   display: none;
 }
@@ -87,6 +114,7 @@ ul {
   right: -48px;
   top: -3px;
   transform-origin: 10px 50%;
+  display: none;
 }
 
 .btn-nav {
