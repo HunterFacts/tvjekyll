@@ -3760,7 +3760,8 @@ a.pointer { cursor: pointer; }
   .section-main p { padding: 0 0.75rem; }
   .section-full-information { margin-top: 0; }
   .command-photo-about { min-height: auto; padding-top: 212px; }
-  .float-nav .container { right: 15px; left: auto; top: -15px; } }
+  .float-nav .container { right: 15px; left: auto; top: -15px; }
+  .section { margin-top: 118px; } }
 
 @media only screen and (max-width: 599px), only screen and (orientation: landscape) and (max-width: 959px) { #modaljobs { border-radius: 30px; background: url(../img/photo-1557187666-4fd70cf76254.webp); height: 100vh; width: 100%; }
   body { max-width: 100%; }

@@ -932,7 +932,14 @@ a.pointer {
         margin-top: 118px;
     }
 }
-
+@media only screen and (max-width:1400px) {
+    .menu-web {
+        display: none;
+    }
+    .btn-nav-container {
+        display: block;
+    }
+}
 
 @media only screen and (max-width:599px), only screen and (orientation: landscape) and (max-width: 959px) {
     #modaljobs {
