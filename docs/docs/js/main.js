@@ -68,6 +68,7 @@ $(document).ready(function(){
             $($(object).children()[0].children[1]).removeClass("rotate");
         }
     });
+    $('.scrollspy').scrollSpy();
     let slidesPerView = 3;
     let spaceBetween = 10;
     if ($(window).width() <= '599' || ((window.matchMedia("(orientation: landscape)").matches) && $(window).width() <= '959')){
