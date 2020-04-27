@@ -53,6 +53,24 @@
                         <circle class="circle-left" cx="45" cy="60" r="60" fill="black"/>
                     </svg>
                 </a>
+                <div class="menu-web">
+                    <ul>
+                        <li><a>Главная</a></li>
+                        <li>
+                            <ul class="table-of-contents">
+                                <li><a href="#main">Главная</a></li>
+                                <li><a href="#sclients">Направления</a></li>
+                                <li><a href="#sprojects">Продукты</a></li>
+                                <li><a href="#scompany">Кратко о нас</a></li>
+                                <li><a href="#scommandphoto">Фотографии</a></li>
+                                <li><a href="#slistnews">Новости</a></li>
+                            </ul>
+                        </li>
+                        <li><a>О нас</a></li>
+                        <li><a>Продукты</a></li>
+                    </ul>
+                    
+                </div>
                 <button class="btn-nav-container open-menu" disabled>
                     <div class="btn-nav"></div>
                 </button>	
@@ -101,7 +119,7 @@ $(window).on('load', function () {
 <script src="js/jquery.viewportchecker.js"></script>
 <script src="js/main.js"></script>
 <main>
-    <section class="section-main">
+    <section id="main" class="section-main scrollspy">
     <h1>
         
         <span>«Траектория времени» <br> российский разработчик</span>
@@ -112,7 +130,7 @@ $(window).on('load', function () {
         <img src="img/69369319_401617683892133_7863953078796419072_o.png" alt="" class='responsive-img'>
     </div>
 </section>
-<section class="section section-work-to-clients">
+<section id="sclients" class="section section-work-to-clients scrollspy">
     <div class="row">
         <div class="col s12 xl6">
             <h5 class="is-animate">Создаваемые нами сервисы и системы базируются на современных технологиях разработки ПО и наиболее эффективных методиках управления для построения бизнес-процессов</h5>
@@ -144,7 +162,7 @@ $(window).on('load', function () {
         </div>
     </div>  
 </section>
-<section class="section section-projects">
+<section id="sprojects" class="section section-projects scrollspy">
     <h1>
         <span class="is-animate">Продукты</span>
     </h1>
@@ -254,7 +272,7 @@ $(window).on('load', function () {
         </div>
     </div>
 </section>
-<section class="section section-company-text">
+<section id="scompany" class="section section-company-text scrollspy">
     <div class="row">
         <div class="col s12 xl6">
             <h5 class="is-animate">Мы верим в создаваемые продукты и преисполнены желанием помогать нашим клиентам достигать успехов. Нам интересно совместно искать решение проблем и пути повышения эффективности бизнеса.</h5>
@@ -274,7 +292,7 @@ $(window).on('load', function () {
         </div>
     </div>
 </section>
-<section class="section section-command-photo">
+<section id="scommandphoto" class="section section-command-photo scrollspy">
     <div class="swiper-container swiper-container-photo">
         <div class="swiper-wrapper">
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/time.jpg"></div>
@@ -289,7 +307,7 @@ $(window).on('load', function () {
         <!--<div class="swiper-pagination"></div>-->
     </div>
 </section>
-<section class="section section-list-news">
+<section id="slistnews" class="section section-list-news scrollspy">
     <div class="row">
         <div class="col s12 offset-xl1 xl10">
             
