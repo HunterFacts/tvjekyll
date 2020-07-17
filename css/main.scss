@@ -1,6 +1,7 @@
-# this ensures Jekyll reads the file to be transformed into CSS later
-# only Main files contain this front matter, not partials.
 ---
+---
+
+@charset 'UTF-8';
 
 @import '_materialize.scss';
 @import '_swiper.min.scss';
@@ -74,6 +75,15 @@ h1 span:nth-child(1) {
     margin-top: 78px;
     margin: 0 auto;
     margin-top: 218px;
+    padding-top: 0;
+    .section-header {
+        width: 50%;
+        padding-top: 78px;
+        margin-left: 25%;
+        text-align: center;
+        border-top: 2px solid #474747;
+        margin-top: 0;
+    }
 }
 .section-work-to-clients {
     &.fix-margin {
@@ -131,13 +141,90 @@ h1 span:nth-child(1) {
 }
 
 .section-company-text {
-    .quantity {
-        font-weight: bold;
-        font-size: 64px;
+    .section-header {
+        margin-bottom: 0;
+        padding-bottom: 78px;
     }
-    .quantity-description {
-        font-size: 16px;
+    .quantity-main-container {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 100px;
+        .quantity-container {
+            display: flex;
+            justify-content: center;
+            .quantity {
+                font-size: 64px;
+                &.quantity-numberuser, &.quantity-numberyear {
+                    position: relative;
+                    background-color: #BD241F;
+                    color: white;
+                    text-align: center;
+                    border-radius: 50%;
+                    width: 135px;
+                    height: 135px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .quantity-description {
+                font-size: 24px;
+                line-height: 24px;
+                margin-left: 20px;
+                width: calc(100% - 155px);
+                display: flex;
+                justify-content: left;
+                align-items: center;
+            }
+        }
     }
+    .scompany-btn-container {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        .btn {
+            width: 296px;
+            height: 74px;
+            background: #BD241F;
+            border-radius: 100px;
+            font-size: 18px;
+            line-height: 74px;
+        }
+    }
+    .scompany-container {
+        padding: 50px;
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 68px;
+        .scompany-help-block-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            border-top: 3px solid black;
+            border-left: 3px solid black;
+            width: 35%;
+            height: 85%;
+        }
+        .scompany-help-block-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 11;
+            border-bottom: 3px solid black;
+            border-right: 3px solid black;
+            width: 35%;
+            height: 85%;
+        }
+        .scompany-text-block {
+            position: relative;
+            font-size: 25px;
+            line-height: 40px;
+            z-index: 12;
+        }
+    }
+    
     .custom-link {
         text-transform: none;
         color: black;
@@ -634,6 +721,89 @@ transform: rotate(-45deg);
 }
 a.pointer {
     cursor: pointer;
+}
+.product-grid {
+    .product-block {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(33.3333333333% - 2px) !important;
+        &:after {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+        border: 1px solid #BD241F;
+        border-collapse: collapse;
+        &:nth-child(1) {
+            border-top: 0;
+            border-left: 0;
+        }
+        &:nth-child(2) {
+            border-top: 0;
+            width: calc(33.3333333333% - 1px) !important;
+        }
+        &:nth-child(3) {
+            border-top: 0;
+            border-right: 0;
+        }
+        &:nth-child(4) {
+            border-bottom: 0;
+            border-left: 0;
+        }
+        &:nth-child(5) {
+            border-bottom: 0;
+            width: calc(33.3333333333% - 1px) !important;
+        }
+        &:nth-child(6) {
+            border-bottom: 0;
+            border-right: 0;
+        }
+        .product-container {
+            margin-bottom: 30px;
+            .product-image-container {
+                display: flex;
+                justify-content: center;
+                .product-image {
+                    background: url('../img/fake-product.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 118px;
+                    height: 118px;
+                }
+            }
+            .product-line {
+                color: #BD241F; /* Цвет линии для остальных браузеров */
+                background-color: #BD241F; /* Цвет линии для браузера Firefox и Opera */
+                height: 2px;
+                border: none;
+                width: 150px;
+                margin-left: 12.5%;
+                transform: translate(-10%, 0);
+            }
+            .product-text {
+                margin-left: 12.5%;
+                width: 100%;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 20px;
+                margin-top: 40px;
+                color: #212129;
+                transform: translate(-12.5%, 0);
+            }
+            .product-about-link {
+                position: absolute;
+                right: 15px;
+                bottom: 20px;
+                a {
+                    text-transform: none;
+                    color: #616172;
+                }
+            }
+        }
+    }
 }
 
 .box {
