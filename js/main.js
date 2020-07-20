@@ -85,6 +85,7 @@ $(document).ready(function(){
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
+        loop: true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,

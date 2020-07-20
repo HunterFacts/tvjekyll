@@ -37,7 +37,10 @@ title: "Траектория времени"
         {% for post in site.tags.product reversed limit:4 %}
             <div class="col s6 product-block">
                 <div class="product-container">
-                    <div class="product-image-container"><div class="product-image"></div></div>
+                    <a onclick="openPreviewProduct(this)">
+                        <div class="product-image-container"><div class="product-image"></div></div>
+                        <div class="hidden-text">{{ post.text }}</div>
+                    </a>
                     <div class="product-text">
                         <a onclick="openPreviewProduct(this)">
                             {{ post.name }}
@@ -190,9 +193,10 @@ title: "Траектория времени"
     <h1 class="section-header">
         <span class="is-animate">Галерея</span>
     </h1>
-    <div class="scommand-help-block-left"></div>
-    <div class="scommand-help-block-right"></div>
+    
     <div class="swiper-container swiper-container-photo">
+        <div class="scommand-help-block-left"></div>
+        <div class="scommand-help-block-right"></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/time.jpg"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/photo_20205-03-11_14-51-23.jpg"></div>
@@ -202,12 +206,8 @@ title: "Траектория времени"
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/timersmenlow.jpg"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/akulaimage.jpg"></div>
         </div>
-        <div class="btn-navigation">
-            
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            
-        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>    
         <!-- Add Pagination -->
         <!--<div class="swiper-pagination"></div>-->
     </div>

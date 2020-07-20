@@ -1,4 +1,5 @@
 nav .container-logo {
+  width: 250px;
   display: flex;
 }
 
@@ -85,11 +86,21 @@ nav .menu-web, .float-nav .menu-web {
         top: -12px;*/
 }
 
+nav .menu-web > ul > li.contact-menu, .float-nav .menu-web > ul > li.contact-menu {
+  width: 250px;
+}
+
 nav .menu-web > ul > li.contact-menu > a, .float-nav .menu-web > ul > li.contact-menu > a {
   text-align: right;
   line-height: 25px;
   text-transform: none;
   font-weight: 500;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+nav .menu-web > ul > li.contact-menu > a:hover, .float-nav .menu-web > ul > li.contact-menu > a:hover {
+  background: none;
 }
 
 nav .menu-web > ul > li.contact-menu > .red-link, .float-nav .menu-web > ul > li.contact-menu > .red-link {
@@ -99,6 +110,7 @@ nav .menu-web > ul > li.contact-menu > .red-link, .float-nav .menu-web > ul > li
 
 nav .menu-web > ul > li > a, .float-nav .menu-web > ul > li > a {
   line-height: 60px;
+  font-weight: 500;
   margin-top: 0px;
   color: black;
 }
