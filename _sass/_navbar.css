@@ -1,14 +1,39 @@
-.brand-logo {
+nav .container-logo {
+  display: flex;
+}
+
+nav .container-logo .brand-logo {
   height: 60px;
-  top: -12px;
-  left: -90px;
-  width: 75px;
-  height: 61px;
-  position: absolute;
+  /*top: -12px;
+        margin-left: -591px;
+        position: fixed;
+        left: 50%;
+        width: 75px;
+        height: 61px;
+        position: absolute;*/
+  position: relative;
   transition: 500ms opacity cubic-bezier(0.165, 0.84, 0.44, 1), 200ms transform cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   transform-origin: 100% 50%;
   will-change: transform;
+  margin-right: 20px;
+}
+
+nav .container-logo .logo-text {
+  text-transform: none;
+  display: block;
+  height: 60px;
+  padding-top: 6px;
+  line-height: 24px;
+  font-size: 24px;
+}
+
+nav .container-logo .logo-text span {
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  line-height: 24px;
+  position: relative;
+  color: black;
 }
 
 #logoSvg {
@@ -26,40 +51,65 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
 }
 
 nav, .float-nav {
-  top: 60px;
-  width: 1002px;
-  margin-left: -501px;
+  min-height: 72px;
+  width: 100%;
+  /*top: 60px; */
+  /*width: 1002px;*/
+  /* margin-left: -501px; */
   position: fixed;
-  left: 50%;
+  /* left: 50%; */
   height: 0;
   z-index: 100;
 }
 
+nav .nav-wrapper, .float-nav .nav-wrapper {
+  padding-top: 30px;
+  height: 90px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 1002px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav .nav-wrapper ul, .float-nav .nav-wrapper ul {
+  background-color: white;
+}
+
 nav .menu-web, .float-nav .menu-web {
-  position: absolute;
-  cursor: pointer;
-  z-index: 999;
-  background: transparent;
-  border: none;
-  outline: none;
-  right: -190px;
-  top: -20px;
-  transform-origin: 10px 50%;
+  /*margin-left: -481px;
+        position: absolute;
+        left: 50%;
+        top: -12px;*/
+}
+
+nav .menu-web > ul > li.contact-menu > a, .float-nav .menu-web > ul > li.contact-menu > a {
+  text-align: right;
+  line-height: 25px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+nav .menu-web > ul > li.contact-menu > .red-link, .float-nav .menu-web > ul > li.contact-menu > .red-link {
+  color: #BD241F;
+  margin-top: 5px;
 }
 
 nav .menu-web > ul > li > a, .float-nav .menu-web > ul > li > a {
+  line-height: 60px;
+  margin-top: 0px;
   color: black;
-  text-shadow: 1px 1px 1px white;
 }
 
 nav .menu-web > ul > li ul, .float-nav .menu-web > ul > li ul {
   transform: translate(15px, 0);
 }
 
-nav .menu-web ul li, .float-nav .menu-web ul li {
-  float: none;
-  height: auto;
-  line-height: 24px;
+nav.nav-menu {
+  background-color: white;
+  min-height: 98px;
 }
 
 .float-nav {
