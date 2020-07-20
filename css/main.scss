@@ -375,7 +375,7 @@ h1 span:nth-child(1) {
 	transform: translateX(-50%) translateY(-50%) scale(1);
 }
 
-.section-list-news .new-description {
+.section-list-news .new-description, .lets-container {
     a {
         color: #343139;
         text-decoration: none;
@@ -473,10 +473,11 @@ footer.page-footer {
             font-weight: bolder;
         }
         .lets-mail-link {
+            display: inline-block;
             text-transform: none;
             color: white;
             font-size: 18px;
-            display: block;
+            margin: 7.5px 0px;
         }
         .logo-footer-container {
             display: flex;
@@ -826,7 +827,6 @@ a.pointer {
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
         width: calc(25% - 1px) !important;
         &:after {
             content: '';

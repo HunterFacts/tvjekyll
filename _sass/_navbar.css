@@ -97,6 +97,7 @@ nav .menu-web > ul > li.contact-menu > a, .float-nav .menu-web > ul > li.contact
   font-weight: 500;
   padding-left: 0;
   padding-right: 0;
+  font-size: 18px;
 }
 
 nav .menu-web > ul > li.contact-menu > a:hover, .float-nav .menu-web > ul > li.contact-menu > a:hover {
