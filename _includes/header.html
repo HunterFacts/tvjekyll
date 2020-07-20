@@ -27,11 +27,13 @@
         </div>-->
     <div class="preview-product">
         <div class="close"><a onclick="closePreview()" class="close pointer"></a></div>
-        <div class="swiper-preview swiper-container">
+        <div class="circle"></div>
+        <!--<div class="swiper-preview swiper-container">
             <div class="swiper-wrapper">
             </div>
             <div class="swiper-pagination"></div>
-        </div>
+        </div>-->
+        <div class="icon-product"></div>
         <div class="text-preview">
             <p>
                 
@@ -43,32 +45,35 @@
         <div class="clock-icon-red"></div>
     </div>
     <header>
-        <nav>
+        <nav class="nav-menu">
             <div class="nav-wrapper">
-                <a href="./" class="brand-logo transition">
-                    <svg height="60" id="logoSvg" width="75" viewBox="0 0 120 120" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <circle class="circle-right" cx="75" cy="60" r="60" fill="#BD241F"/>
-                        <circle class="circle-left" cx="45" cy="60" r="60" fill="black"/>
-                    </svg>
-                </a>
-                <div class="menu-web">
-                    <ul>
-                        <li><a href="./">Главная</a></li>
-                        <li>
-                            <ul class="table-of-contents">
-                                <li><a href="#main">Главная</a></li>
-                                <li><a href="#sclients">Направления</a></li>
-                                <li><a href="#sprojects">Продукты</a></li>
-                                <li><a href="#scompany">Кратко о нас</a></li>
-                                <li><a href="#scommandphoto">Фотографии</a></li>
-                                <li><a href="#slistnews">Новости</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="products.html">Продукты</a></li>
-                    </ul>
+                <div class='container-logo'>
+                    <a href="./" class="brand-logo transition">
+                        <svg height="60" id="logoSvg" width="75" viewBox="0 0 120 120" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle class="circle-right" cx="75" cy="60" r="60" fill="#BD241F"/>
+                            <circle class="circle-left" cx="45" cy="60" r="60" fill="black"/>
+                        </svg>
+                        
+                    </a>
+                    <a href="./" class="transition logo-text">
+                        <span>Траектория <br> времени</span>
+                    </a>
                     
+                </div>
+                <div class="menu-web">
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="transition" href="./about.html">Контакты</a></li>
+                        <li><a class="transition" href="./about.html">О траектории</a></li>                     
+                    </ul>
+                </div>
+                <div class="menu-web">
+                        <ul class="right hide-on-med-and-down">
+                            <li class="contact-menu">
+                                <a class="red-link" href="tel:+79124859069">+7 912 485-90-69</a>
+                                <a href="mailto:gadiatulin@timepath.ru">gadiatulin@timepath.ru</a>
+                            </li>
+                        </ul>
                 </div>
                 <button class="btn-nav-container open-menu" disabled>
                     <div class="btn-nav"></div>
