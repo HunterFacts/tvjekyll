@@ -82,6 +82,21 @@ $(document).ready(function(){
             //el: '.swiper-pagination',
             clickable: true,
         },
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
     $(window).scroll(function() {
         if (!$(".float-nav").hasClass("active")){
@@ -120,6 +135,13 @@ function openPreview (self){
         });
     });
     $('.preview-product .text-preview p').html(previewText.html());
+}
+function openPreviewProduct (self){
+    let previewLink = $(self);
+    $('.preview-product .swiper-wrapper').html("");
+    $('.preview-product .text-preview p').html(previewLink.children('.hidden-text').html());
+    $('.preview-product').addClass('visible-preview');
+        $('main').addClass('main-hide');
 }
 function closePreview(){
     $('main').removeClass('main-hide');

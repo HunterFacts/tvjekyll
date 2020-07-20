@@ -11,10 +11,9 @@ title: "Траектория времени"
         <span>{{ mainpagetext.maintext.text2 }}</span>
         <span>{{ mainpagetext.maintext.text3 }}</span>
     </h1>
-    <div class="img-main">
-        <img src="img/69369319_401617683892133_7863953078796419072_o.png" alt="" class='responsive-img'>
-    </div>
+    
 </section>
+<!--
 <section id="sclients" class="section section-work-to-clients scrollspy">
     <div class="row">
         <div class="col s12 xl6">
@@ -32,11 +31,27 @@ title: "Траектория времени"
         </div>
     </div>  
 </section>
+-->
 <section id="sprojects" class="section section-projects scrollspy">
-    <h1>
-        <span class="is-animate">Продукты</span>
-    </h1>
-    <div class="row">
+    <div class="row product-grid"> 
+        {% for post in site.tags.product reversed limit:4 %}
+            <div class="col s6 product-block">
+                <div class="product-container">
+                    <a onclick="openPreviewProduct(this)">
+                        <div class="product-image-container"><div class="product-image"></div></div>
+                        <div class="hidden-text">{{ post.text }}</div>
+                    </a>
+                    <div class="product-text">
+                        <a onclick="openPreviewProduct(this)">
+                            {{ post.name }}
+                            <div class="hidden-text">{{ post.text }}</div>
+                        </a>
+                    </span></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!--<div class="row">
         <div class="col s12 xl6 is-animate">          
             <div class="image-project">
                 <a onclick="openPreview(this);">
@@ -140,30 +155,48 @@ title: "Траектория времени"
             </div>
             <h5 class="project-h">Диспетчерская</h5>
         </div>
-    </div>
+    </div>-->
 </section>
 <section id="scompany" class="section section-company-text scrollspy">
+    <h1 class="section-header">
+        <span class="is-animate">О Траектории</span>
+    </h1>
+    <div class="scompany-container">
+        <div class="scompany-help-block-left"></div>
+        <div class="scompany-help-block-right"></div>
+        <div class="scompany-text-block">Мы верим в создаваемые <b>продукты</b> и преисполнены желанием помогать <b>нашим клиентам</b> добиваться успеха. Нам интересно совместно искать решение проблем и пути повышения <b>эффективности бизнеса</b>.</div>
+    </div>
+    <div class="row quantity-main-container">
+        <div class="col s6 quantity-container">
+            <div class="quantity quantity-numberuser"><div class="number">7</div></div>
+            <div class="quantity-description is-animate">Программистов и аналитиков</div>
+        </div>
+        <div class="col s6 quantity-container">
+            <div class="quantity quantity-numberyear"><div class="number">2</div></div>
+            <div class="quantity-description quantity-description-year is-animate">Лет в бизнесе</div>
+        </div>
+        <div class="col s12 scompany-btn-container">
+            <a href="./about.html" class="waves-effect waves-light btn">Узнать больше</a>
+        </div>
+    </div>
+    <!--
     <div class="row">
         <div class="col s12 xl6">
             <h5 class="is-animate">{{ mainpagetext.textCommand.motivationtext }}</h5>
             <a href="about.html" class="custom-link is-animate-two transition">Больше о «Траектория времени»</a>
         </div>
-        <div class="col s12 xl3 offset-xl3">
-            <div class="row">
-                <div class="col s6 xl12">
-                    <div class="quantity quantity-numberuser">7</div>
-                    <div class="quantity-description is-animate">Программистов и аналитиков</div>
-                </div>
-                <div class="col s6 xl12">
-                    <div class="quantity quantity-numberyear">2</div>
-                    <div class="quantity-description is-animate">Лет в бизнесе</div>
-                </div>
-            </div>
-        </div>
+        
     </div>
+    -->
 </section>
 <section id="scommandphoto" class="section section-command-photo scrollspy">
+    <h1 class="section-header">
+        <span class="is-animate">Галерея</span>
+    </h1>
+    
     <div class="swiper-container swiper-container-photo">
+        <div class="scommand-help-block-left"></div>
+        <div class="scommand-help-block-right"></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/time.jpg"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/photo_20205-03-11_14-51-23.jpg"></div>
@@ -173,14 +206,19 @@ title: "Траектория времени"
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/timersmenlow.jpg"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/akulaimage.jpg"></div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>    
         <!-- Add Pagination -->
         <!--<div class="swiper-pagination"></div>-->
     </div>
 </section>
 <section id="slistnews" class="section section-list-news scrollspy">
+    <h1 class="section-header">
+        <span class="is-animate">Новости</span>
+    </h1>
     <div class="row">
-        <div class="col s12 offset-xl1 xl10">
-            {% for post in site.tags.new limit:3 %}
+        <div class="col s12 offset-xl1 xl10 news-container">
+            {% for post in site.tags.new limit:4 %}
                 <div class="row is-animate">
                     <div class="col s12 xl2">
                         <div class="new-date">{{ post.datestring }}</div>
@@ -216,12 +254,12 @@ title: "Траектория времени"
         classToAdd: 'is-animate-active',
         offset: 100,
         callbackFunction: function(elem, action){
-            var currentNumber = $('.quantity-numberuser').text();
+            var currentNumber = $('.quantity-numberuser .number').text();
             $({numberValue: currentNumber}).animate({numberValue: 18}, {
                 duration: 800,
                 easing: 'linear',
                 step: function() { 
-                    $('.quantity-numberuser').text(Math.ceil(this.numberValue)); 
+                    $('.quantity-numberuser .number').text(Math.ceil(this.numberValue)); 
                 }
             });
         },
@@ -230,12 +268,12 @@ title: "Траектория времени"
         classToAdd: 'is-animate-active',
         offset: 100,
         callbackFunction: function(elem, action){
-            var currentNumber = $('.quantity-numberyear').text();
+            var currentNumber = $('.quantity-numberyear .number').text();
             $({numberValue: currentNumber}).animate({numberValue: 5}, {
                 duration: 800,
                 easing: 'linear',
                 step: function() { 
-                    $('.quantity-numberyear').text(Math.ceil(this.numberValue)); 
+                    $('.quantity-numberyear .number').text(Math.ceil(this.numberValue)); 
                 }
             });
         },
