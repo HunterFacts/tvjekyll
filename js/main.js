@@ -136,12 +136,38 @@ function openPreview (self){
     });
     $('.preview-product .text-preview p').html(previewText.html());
 }
-function openPreviewProduct (self){
+
+function setDefaultPreviewBlock (){
+    $('.preview-product').html('<!--<div class="close"><a onclick="closePreview()" class="close pointer iframe-close"></a></div>--><div class="circle"></div><div class="icon-product"></div><div class="text-preview"><p></p></div>');
+    window.location = '#';
+}
+
+function openPreviewProduct (self, title = null){
+    if (self === null && title != null){
+        self = $('a[data-title="'+title+'"]');
+    }
     let previewLink = $(self);
     $('.preview-product .swiper-wrapper').html("");
-    $('.preview-product .text-preview p').html(previewLink.children('.hidden-text').html());
+    switch ($(self).data('title')) {
+        case 't-mobis':
+            $('.preview-product').html('<!--<div class="close"><a onclick="closePreview()" class="close pointer iframe-close"></a></div>--><iframe src="../products-lending/inspector/index.html" class="iframe-product"></iframe>');
+            $('.preview-product').addClass('visible-preview');
+            break;
+        default:
+            $('.preview-product .text-preview p').html(previewLink.children('.hidden-text').html());
+            break;
+    }
+
+    $('.iframe-products').load(function () {
+        var container = $('.iframe-product').contents();
+        container.on('click','a.iframe-close',function () {
+            closePreview();
+        });
+    });
+    window.location = '#' + $(self).data('title');
+
     $('.preview-product').addClass('visible-preview');
-        $('main').addClass('main-hide');
+    $('main').addClass('main-hide');
 }
 function closePreview(){
     $('main').removeClass('main-hide');
@@ -151,5 +177,6 @@ function closePreview(){
     }, 400, 'linear', function (){
         $('.preview-product').attr('style', '');
         $('.preview-product').removeClass('visible-preview');
+        setDefaultPreviewBlock();
     });
 }

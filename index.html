@@ -37,12 +37,12 @@ title: "Траектория времени"
         {% for post in site.tags.product reversed limit:4 %}
             <div class="col s6 product-block">
                 <div class="product-container">
-                    <a onclick="openPreviewProduct(this)">
-                        <div class="product-image-container"><div class="product-image"></div></div>
+                    <a data-title="{{ post.title }}" href='{{ post.href }}/'>
+                        <div class="product-image-container"><div class="product-image product-image-{{ post.title }}"></div></div>
                         <div class="hidden-text">{{ post.text }}</div>
                     </a>
                     <div class="product-text">
-                        <a onclick="openPreviewProduct(this)">
+                        <a data-title="{{ post.title }}" href='{{ post.href }}/'>
                             {{ post.name }}
                             <div class="hidden-text">{{ post.text }}</div>
                         </a>
@@ -169,7 +169,7 @@ title: "Траектория времени"
     <div class="row quantity-main-container">
         <div class="col s6 quantity-container">
             <div class="quantity quantity-numberuser"><div class="number">7</div></div>
-            <div class="quantity-description is-animate">Программистов и аналитиков</div>
+            <div class="quantity-description is-animate">регионов России используют Т-Мобис</div>
         </div>
         <div class="col s6 quantity-container">
             <div class="quantity quantity-numberyear"><div class="number">2</div></div>
@@ -191,7 +191,7 @@ title: "Траектория времени"
 </section>
 <section id="scommandphoto" class="section section-command-photo scrollspy">
     <h1 class="section-header">
-        <span class="is-animate">Галерея</span>
+        <span class="is-animate">Фотографии</span>
     </h1>
     
     <div class="swiper-container swiper-container-photo">
@@ -199,7 +199,6 @@ title: "Траектория времени"
         <div class="scommand-help-block-right"></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/time.jpg"></div>
-            <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/photo_20205-03-11_14-51-23.jpg"></div>
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/funcat.jpg"></div>
             
             <div class="swiper-slide photo-container"><img class="responsive-img" src="img/photo/teaparty.jpg"></div>
@@ -255,7 +254,7 @@ title: "Траектория времени"
         offset: 100,
         callbackFunction: function(elem, action){
             var currentNumber = $('.quantity-numberuser .number').text();
-            $({numberValue: currentNumber}).animate({numberValue: 18}, {
+            $({numberValue: currentNumber}).animate({numberValue: 20}, {
                 duration: 800,
                 easing: 'linear',
                 step: function() { 
@@ -282,6 +281,9 @@ title: "Траектория времени"
 (function () {
     'use strict';
     var boxElems = document.querySelectorAll('.image-project');
+    if (window.location.hash.slice(1) != '' && window.location.hash.slice(1) != null && window.location.hash.slice(1) != undefined) {
+        openPreviewProduct(null, window.location.hash.slice(1));
+    } 
     function onMouseMove(event) {
         var mouseX = event.pageX;
         var mouseY = event.pageY;
