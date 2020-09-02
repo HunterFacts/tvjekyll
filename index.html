@@ -38,12 +38,12 @@ title: "Траектория времени"
         {% for post in site.tags.product reversed limit:4 %}
             <div class="col s12 xl6 product-block">
                 <div class="product-container">
-                    <a data-title="{{ post.title }}" href='{{ post.href }}/'>
+                    <a data-title="{{ post.title }}" target="{{ post.target }}" href='{{ post.href }}'>
                         <div class="product-image-container"><div class="product-image product-image-{{ post.title }}"></div></div>
                         <div class="hidden-text">{{ post.text }}</div>
                     </a>
                     <div class="product-text">
-                        <a data-title="{{ post.title }}" href='{{ post.href }}/'>
+                        <a data-title="{{ post.title }}" target="{{ post.target }}" href='{{ post.href }}'>
                             {{ post.name }}
                             <div class="hidden-text">{{ post.text }}</div>
                         </a>
