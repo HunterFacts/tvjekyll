@@ -5,6 +5,7 @@ title: "Траектория времени"
 ---
 
 <section id="main" class="section-main scrollspy">
+    <div class="logo-image-mobile"></div>
     <h1>
         {% assign mainpagetext = site.data.maintext["mainpagetext"] %}
         <span>{{ mainpagetext.maintext.text1 }}</span>
@@ -35,7 +36,7 @@ title: "Траектория времени"
 <section id="sprojects" class="section section-projects scrollspy">
     <div class="row product-grid"> 
         {% for post in site.tags.product reversed limit:4 %}
-            <div class="col s6 product-block">
+            <div class="col s12 xl6 product-block">
                 <div class="product-container">
                     <a data-title="{{ post.title }}" href='{{ post.href }}/'>
                         <div class="product-image-container"><div class="product-image product-image-{{ post.title }}"></div></div>

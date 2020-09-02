@@ -75,6 +75,10 @@ $(document).ready(function(){
         slidesPerView = 1;
         spaceBetween = 0;
     }
+    else if ($(window).width() <= '768' || ((window.matchMedia("(orientation: landscape)").matches) && $(window).width() <= '1024')){
+        slidesPerView = 2;
+        spaceBetween = 0;
+    }
     var swiper = new Swiper('.swiper-container-photo', {
         slidesPerView: slidesPerView,
         spaceBetween: spaceBetween,
