@@ -1382,7 +1382,7 @@ a.pointer {
     .float-nav .container {
         right: 15px;
         left: auto;
-        top: -15px;
+        top: -30px;
     }
     .section {
         margin-top: 118px;
@@ -1728,6 +1728,12 @@ a.pointer {
         }
     }
     nav {
+        &.nav-menu {
+            min-height: 60px;
+        }
+        .nav-wrapper {
+            height: 60px;
+        }
         top: 10px;
         .brand-logo {
             left: 10px;
